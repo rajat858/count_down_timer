@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+#app {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Ensures full viewport height */
+}
+.container {
+  text-align: center;
+}
+.date-container {
+  display: flex;
+  justify-content: center;
+}
