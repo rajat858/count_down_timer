@@ -8,9 +8,9 @@ function DateTimePicker() {
   const [dateTime, setDateTime] = useState("");
   const [isTimerOn, setIsTimerOn] = useState(false);
 
-  const currTime = new Date().getTime();
-  const futureTime = new Date(dateTime).getTime();
-  const differenceDays = Math.floor((futureTime - currTime)/ (1000 * 60 * 60 * 24));
+  const currTime = new Date().getTime(); //getting current time in milliseconds
+  const futureTime = new Date(dateTime).getTime();//getting future time in milliseconds
+  const differenceDays = Math.floor((futureTime - currTime)/ (1000 * 60 * 60 * 24)); //finding number of days between current and future time
   const moreThanHundredDays = ()=> {
     if(differenceDays>100){
       return true;
@@ -18,35 +18,31 @@ function DateTimePicker() {
     return false;
   }
 const handleBlur = (e) =>{
-    //e.preventDefault();
     const futureDateTime = e.target.value;
-    //console.log(dateTime);
-     setDateTime(futureDateTime);
+    setDateTime(futureDateTime);
 }
 
 const handleClear = (e) => {
- 
   if(e.target.value.length === 0){
-    // console.log("cleared", typeof(e.target.value));
     setDateTime(null);
   }
   
 }
 const handleSubmit = (e) => {
   e.preventDefault();
-  if(moreThanHundredDays()){
+  if(moreThanHundredDays()){  // check more than 100 days condition
     console.log("more than 100 days");
   }
-  else if(dateTime === "" || differenceDays < 0){
-    console.log("future time is not selected")
+  else if(dateTime === "" || differenceDays < 0){ //check if dateTime currently selected is empty or past date is selected
+    console.log("Past time or No Time is selected")
     setSelectedDateTime(null);
   }
-  else if(isTimerOn){
+  else if(isTimerOn){ //if timer is ON then stop it and reset the count Down
     setIsTimerOn(false);
     setSelectedDateTime(null);
   }
   else{
-    setIsTimerOn(true);
+    setIsTimerOn(true);//if timer is OFF then start it and set the count Down to the current date time selected in picker
     setSelectedDateTime(dateTime);
   }
   

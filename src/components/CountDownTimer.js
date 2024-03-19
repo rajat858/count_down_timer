@@ -28,12 +28,12 @@ function CountDownTimer({ selectedDateTime }) {
 
   const [timeLeft, setTimeLeft] = useState(calculateTime());
   useEffect(() => {
-    if(selectedDateTime === null){
+    if(selectedDateTime === null){ //to set counter to 00 00 00 00 when date is more than 100 days, same day and past date or no date
       setTimeLeft(calculateTime());
     }
     
     var intervalId = null;
-    if (selectedDateTime !== null && selectedDateTime) {
+    if (selectedDateTime !== null && selectedDateTime) {// calculating time left every second using setInterval()
       intervalId = setInterval(() => {
         setTimeLeft(calculateTime());
       }, 1000);
