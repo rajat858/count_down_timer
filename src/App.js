@@ -5,7 +5,10 @@ function App() {
   return (
     <div id="app">
       <div className='container'>
-      Count Down Timer
+        <div className="title">
+        <h1 className="count">Countdown</h1> <h1 className="timer">Timer</h1>
+        </div>
+      
 
       <div className="date-container"><DateTimePicker/></div>
       

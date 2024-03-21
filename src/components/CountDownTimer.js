@@ -44,12 +44,12 @@ function CountDownTimer({ selectedDateTime }) {
 
   return (
     <div className="timer-container">
-      <div className="timer-card">{timeLeft.days<10?"0"+timeLeft.days:timeLeft.days}</div>
-      <div className="timer-card">{timeLeft.hours<10?"0"+timeLeft.hours:timeLeft.hours}</div>
-      <div className="timer-card">{timeLeft.minutes<10?"0"+timeLeft.minutes:timeLeft.minutes}</div>
-      <div className="timer-card">{timeLeft.seconds<10?"0"+timeLeft.seconds:timeLeft.seconds}</div>
-    </div>
-  );
+      <div className="timer-card"><div className="timer-info"><h1>{timeLeft.days<10?"0"+timeLeft.days:timeLeft.days}</h1><h2>Days</h2></div></div>
+      <div className="timer-card"><div className="timer-info"><h1>{timeLeft.hours<10?"0"+timeLeft.hours:timeLeft.hours}</h1><h2>Hours</h2></div></div>
+      <div className="timer-card"><div className="timer-info"><h1>{timeLeft.minutes<10?"0"+timeLeft.minutes:timeLeft.minutes}</h1><h2>Minutes</h2></div></div>
+      <div className="timer-card"><div className="timer-info"><h1>{timeLeft.seconds<10?"0"+timeLeft.seconds:timeLeft.seconds}</h1><h2>Seconds</h2></div></div>
+    </div>) 
+  
 }
 
 export default CountDownTimer;
