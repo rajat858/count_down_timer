@@ -1,9 +1,9 @@
-.timer-container {
+.timercontainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.timer-card {
+.timercard {
   min-width: 200px; /* Fixed width */
   min-height: 200px; /* Fixed height */
   margin: 10px;
@@ -14,12 +14,20 @@
   border-radius: 10px;
   color: white;
   box-shadow: 6px 3px 40px rgba(0, 0, 0, 0.2);
-  
 }
 
+.counter {
+  font-size: 5.5rem;
+}
+.error {
+  margin:8px 0;
+  color: #940085;
+}
 
 @media (max-width: 440px) {
-  .timer-container {
+  .timercontainer {
+    
     height: 70vh;
+    
   }
 }

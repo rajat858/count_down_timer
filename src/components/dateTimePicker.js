@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./dateTimePicker.css";
+import styles from "./dateTimePicker.module.css";
 import CountDownTimer from "./CountDownTimer";
 function DateTimePicker() {
   const [selectedDateTime, setSelectedDateTime] = useState(null);
@@ -31,6 +31,12 @@ function DateTimePicker() {
       setDateTime(null);
     }
   };
+  const handleDateTimeChange = (v) => { //to change this state from child by passing as prop
+    setDateTime(v);
+  }
+  const handleisTimerOn = (v) => { //to change this state from child by passing as prop
+    setIsTimerOn(v);
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +67,7 @@ function DateTimePicker() {
       <div>
         <form className="date-time-form" onSubmit={handleSubmit}>
           <input
-            className="datetime-input"
+            className={styles.datetimeinput}
             type="datetime-local"
             id="datetime"
             name="datetime"
@@ -69,24 +75,24 @@ function DateTimePicker() {
             onChange={handleClear}
             disabled={isTimerOn}
           />
-          <button className="datetime-btn" type="submit">
+          <button className={styles.datetimebtn} type="submit">
             {isTimerOn ? "Cancel Timer" : "Start Timer"}
           </button>
         </form>
 
         {isPastOrNoTime ? (
-          <h4 className="error">Past time, no time or same time is selected</h4>
+          <h4 className={styles.error}>Past time, no time or same time is selected</h4>
         ) : (
           <></>
         )}
 
         {isMorethan100Days ? (
-          <h4 className="error">Selected time is more than 100 days</h4>
+          <h4 className={styles.error}>Selected time is more than 100 days</h4>
         ) : (
           <CountDownTimer
             selectedDateTime={selectedDateTime}
-            setIsTimerOn={setIsTimerOn}
-            setDateTime = {setDateTime}
+            setIsTimerOn={handleisTimerOn}
+            setDateTime = {handleDateTimeChange}
           />
         )}
       </div>

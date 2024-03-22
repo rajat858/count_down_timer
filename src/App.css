@@ -57,11 +57,13 @@
   flex-wrap: wrap;
 }
 .timer {
+  font-weight: bold;
   margin-left: 8px;
   color: #940085;
+  font-size: 3rem;
 }
-h1 {
+.count  {
   font-weight: bold;
   color: #fff;
-  font-size: 5.5rem;
+  font-size: 3rem;
 }
