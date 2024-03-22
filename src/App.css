@@ -1,6 +1,3 @@
-/* .App {
-  text-align: center;
-} */
 
 .App-logo {
   height: 40vmin;
@@ -36,6 +33,8 @@
     transform: rotate(360deg);
   }
 }
+/* -------------------------------------------------above is template css ---------------------------- */
+
 #app {
   display: flex;
   justify-content: center; /* Centers horizontally */
@@ -60,4 +59,9 @@
 .timer {
   margin-left: 8px;
   color: #940085;
+}
+h1 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 5.5rem;
 }

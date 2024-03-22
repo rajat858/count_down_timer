@@ -1,4 +1,15 @@
-.reddit {
-  
-  
+.datetime-input, .datetime-btn {
+  min-width: 100px;
+  padding: 4px;
+  margin: 5px;
+  background: transparent;
+  border: 2px solid black;
+  filter: invert(1);
+  border-radius: 5px;
 }
+
+.error {
+  margin:8px 0;
+  color: #940085;
+}
+

@@ -1,3 +1,8 @@
+.timer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .timer-card {
   min-width: 200px; /* Fixed width */
   min-height: 200px; /* Fixed height */
@@ -9,18 +14,9 @@
   border-radius: 10px;
   color: white;
   box-shadow: 6px 3px 40px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  
 }
-.timer-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-h1 {
-  font-weight: bold;
-  color: #fff;
-  font-size: 5.5vh;
-}
+
 
 @media (max-width: 440px) {
   .timer-container {
